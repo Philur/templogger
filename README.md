@@ -2,17 +2,17 @@
 
 Some useful links
 ===============================================================
-https://github.com/StormTrooper/RaspberryPi-WeatherStation
-https://github.com/tomhartley/AirPi
-https://github.com/jim-easterbrook/pywws
-http://www.jim-easterbrook.me.uk/
-https://github.com/sirleech/thingspeak/blob/master/log.py
-http://www.australianrobotics.com.au/news/how-to-talk-to-thingspeak-with-python-a-memory-cpu-monitor
+https://github.com/StormTrooper/RaspberryPi-WeatherStation <BR>
+https://github.com/tomhartley/AirPi <BR>
+https://github.com/jim-easterbrook/pywws <BR>
+http://www.jim-easterbrook.me.uk/ <BR>
+https://github.com/sirleech/thingspeak/blob/master/log.py <BR>
+http://www.australianrobotics.com.au/news/how-to-talk-to-thingspeak-with-python-a-memory-cpu-monitor <BR>
 
 
-/home/pi
-/home/pi/Weather
-/home/pi/Weather/WS
-/home/pi/Weather/WS/data
-/home/pi/Weather/WS/data/raw
-/home/pi/Weather/TempLogger
+/home/pi <BR>
+/home/pi/Weather <BR>
+/home/pi/Weather/WS <BR>
+/home/pi/Weather/WS/data <BR>
+/home/pi/Weather/WS/data/raw <BR>
+/home/pi/Weather/TempLogger <BR>
