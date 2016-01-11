@@ -14,9 +14,9 @@ import RPi.GPIO as GPIO  # GPIO library
 ################# Default Constants #################
 # These can be changed if required
 THINGSPEAKKEY	= 'APIKEY'
-THINGSPEAKURL	= 'https://api.thingspeak.com/update'
+THINGSPEAKURL	= 'api.thingspeak.com/update'
 INTERVAL		= 1    # Delay between each reading (mins)
-CFGFILE			= '/home/pi/weather/templogger.cfg'
+CFGFILE			= '/home/pi/Weather/templogger.cfg'
 TEMPOUT			= 1
 AIRPRESSURE		= 2
 
@@ -30,11 +30,11 @@ def readDataERIK():
     data = f.read().splitlines()
     f.close()
     if data[0]=='Temp Logger':
-      print "Using templogger.cfg"
-      TEMPOUT		= int(data[1])
-	  AIRPRESSURE	= int(data[2])
+		print "Using templogger.cfg"
+		TEMPOUT		= int(data[1])
+		AIRPRESSURE	= int(data[2])
 
-def sendDataERIK(url,key,field1,field2,temp,pres):
+def sendDataERIK(url,ke	y,field1,field2,temp,pres):
   values = {'key' : key,'field1' : temp,'field2' : pres}
 
   postdata = urllib.urlencode(values)
@@ -71,18 +71,18 @@ def main():
   try:
 
     while True:
-      readDataERIK()
-	  sendDataERIK(THINGSPEAKURL,THINGSPEAKKEY,'field1','field2',TEMPOUT,AIRPRESSURE)
-      sys.stdout.flush()
+		readDataERIK()
+		sendDataERIK(THINGSPEAKURL,THINGSPEAKKEY,'field1','field2',TEMPOUT,AIRPRESSURE)
+		sys.stdout.flush()
+		
+		# Toggle LED while we wait for next reading
+		for i in range(0,INTERVAL*60):
+			time.sleep(1)
 
-      # Toggle LED while we wait for next reading
-      for i in range(0,INTERVAL*60):
-        time.sleep(1)
+	except :
+		# Reset GPIO settings
+		# GPIO.cleanup()
 
-  except :
-    # Reset GPIO settings
-    # GPIO.cleanup()
-
-if __name__=="__main__":
+  if __name__=="__main__":
    main()
 		
