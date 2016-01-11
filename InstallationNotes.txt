@@ -1,0 +1,21 @@
+Installation notes
+
+Coonfigure SMB Share
+http://raspberrypihq.com/how-to-share-a-folder-with-a-windows-computer-from-a-raspberry-pi/
+
+sudo apt-get install samba samba-common-bin
+sudo nano /etc/samba/smb.conf
+  workgroup = PEZ
+  wins support = yes
+sudo nano /etc/samba/smb.conf
+ [PiShare]
+ comment=Raspberry Pi Share
+ path=/home/pi/Weather 
+ browseable=Yes
+ writeable=Yes
+ only guest=no
+ create mask=0777
+ directory mask=0777
+ public=no
+sudo smbpasswd -a pi
+
