@@ -39,3 +39,42 @@ livelogging with L flag
 	Eller så kan denna användas i TempLogger filen ....
 	python -m pywws.Template /home/pi/Weather/WS/data ~/home/pi/Weather/WS/templates_used/tweet.txt /home/pi/Weather/WS/results/tweet.txt
 	cat /home/pi/Weather/WS/results/tweet.txt
+	
+	
+	
+$ ~/.weather/data$ date
+sön 10 jan 2016 08:49:19 CET
+$ ~/.weather/data$ python -m pywws.Template ~/.weather/data ~/.weather/templates/tweet.txt tweet.txt
+08:49:29:pywws.Logger:pywws version 15.12.0
+08:49:29:pywws.Logger:Python version 2.7.10 (default, Oct 14 2015, 16:09:02) 
+[GCC 5.2.1 20151010]
+$ ~/.weather/data$ cat tweet.txt 
+08:00 CET:
+Temperature Out: -3.3 C
+Temperature In: 19.0 C
+Wind Direction: E, 
+Wind Average: 8 mph (ave), 
+Wind Gust 16 mph (gust)
+Humidity Out: 99%
+Humidity In: 32%
+Rain (hourly) 954.6 mm
+Pressure: 1008 hPa, 
+
+The "tweet.txt" template:
+
+#! <copyright info> #
+#live#
+#timezone local#
+#roundtime True#
+#idx "%H:%M %Z:"#
+
+Temperature Out: #temp_out "%.1f C"#
+Temperature In: #temp_in "%.1f C"#
+Wind Direction: #wind_dir "%s, " "" "winddir_text(x)"#
+Wind Average: #wind_ave "%.0f mph (ave), " "" "wind_mph(x)"#
+Wind Gust #wind_gust "%.0f mph (gust)" "" "wind_mph(x)"#
+Humidity Out: #hum_out "%d%%"#
+Humidity In: #hum_in "%d%%"#
+Rain (hourly) #rain "%.1f mm"#
+Pressure: #rel_pressure "%.0f hPa, "#
+#!pressure_trend "%s" "" "pressure_trend_text(x)"#
