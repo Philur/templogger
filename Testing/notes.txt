@@ -1,0 +1,41 @@
+Tasks
+HW: Install pi
+HW: Install WiFi adapter
+HW: Install USB stick shared
+HW: Enabled pwws connection
+HW: Enabled IC2 connection to BMP180
+HW: Setup of BMP180, switch and light bulb
+
+Install and update Rasbian
+
+
+
+weather.ini file
+[paths]
+work = /tmp/weather
+templates = /home/pi/Weather/WS/templates_used/
+graph_templates = /home/pi/Weather/WS/graph_templates_used/
+local_files = /home/pi/Weather/WS/results/
+
+[live]
+text = [('yowindow.xml', 'L')]
+
+
+
+livelogging with L flag
+
+    Stop all pywws software
+    Copy the yowindow.xml example template to your text template directory.
+    If you haven’t already done so, edit weather.ini and set the local_files entry in the [paths] section to a suitable directory for your yowindow file.
+
+    Add the yowindow template to the [live] tasks in weather.ini. Set its flags to 'L' so the result is copied to your local directory instead of being uploaded to an ftp site:
+
+    [live]
+    text = [('yowindow.xml', 'L')]
+
+    Restart pywws live logging.
+	
+	
+	Eller så kan denna användas i TempLogger filen ....
+	python -m pywws.Template /home/pi/Weather/WS/data ~/home/pi/Weather/WS/templates_used/tweet.txt /home/pi/Weather/WS/results/tweet.txt
+	cat /home/pi/Weather/WS/results/tweet.txt
