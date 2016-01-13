@@ -28,7 +28,7 @@ TEMPIN			= 0				# Temperature inside
 
 #####################################################
 
-def readCfgFile(): # OK
+def readConfigFile(): # OK
 	print 'Access function readCfgFile'
 	global THINGSPEAKKEY
 	global THINGSPEAKURL
@@ -65,8 +65,8 @@ def readDataFile(): # OK
 		f.close()
 		if data[0]=='Temp Logger':
 			print "Using data"
-			TEMPOUT	= int(data[1])
-			TEMPIN	= int(data[2])
+			TEMPOUT	= float(data[1])
+			TEMPIN	= float(data[2])
 		else:
 			print 'Error in Data file'
 	else:
