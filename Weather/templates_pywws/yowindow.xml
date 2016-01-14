@@ -1,0 +1,15 @@
+#! #
+#live#
+#timezone local#
+#roundtime True#
+#idx "%H:%M %Z:"#
+Temperature Out: #temp_out "%.1f C"#
+Temperature In: #temp_in "%.1f C"#
+Wind Direction: #wind_dir "%s, " "" "winddir_text(x)"#
+Wind Average: #wind_ave "%.0f mph (ave), " "" "wind_mph(x)"#
+Wind Gust #wind_gust "%.0f mph (gust)" "" "wind_mph(x)"#
+Humidity Out: #hum_out "%d%%"#
+Humidity In: #hum_in "%d%%"#
+Rain (hourly) #rain "%.1f mm"#
+Pressure: #rel_pressure "%.0f hPa, "#
+#!pressure_trend "%s" "" "pressure_trend_text(x)"#
