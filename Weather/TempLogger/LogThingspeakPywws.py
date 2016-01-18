@@ -1,8 +1,15 @@
 #!/usr/bin/python
-#--------------------------------------
-# Modified to  as simple as possible
-# LogReadFile2.py
-#--------------------------------------
+#-------------------------------------------------------------------------------
+# Name:			LogThingspeakPywws
+# Version:		1.0
+# Purpose:		Read pywws file and log to Thingspeak
+#
+# Author:		Erik Nilsson
+#
+# Created:		2016-01-18
+# Copyright:	c) Erik 2016
+# Licence:		The MIT License (MIT)
+#-------------------------------------------------------------------------------
 import httplib
 from time import localtime, strftime
 import psutil
