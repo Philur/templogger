@@ -1,6 +1,14 @@
 Temp Logger
 #temp_out "%.1f"#
 #temp_in "%.1f"#
+#calc "apparent_temp(data['temp_out'], data['hum_out'], data['wind_ave'])" "%.1f"#
+#hum_out "%d"#
+#hum_in "%d"#
+#rel_pressure "%.0f"#
+#wind_ave "%.1f"#
+#wind_gust "%.1f"#
+#wind_dir "%.0f" "" "winddir_degrees(x)"#
+#rain "%.1f"#
 Temperature Out: #temp_out "%.1f C"#
 Temperature In: #temp_in "%.1f C"#
 Wind Direction: #wind_dir "%s, " "" "winddir_text(x)"#

@@ -1,0 +1,10 @@
+#temp_out "%.1f"#
+#temp_in "%.1f"#
+#wind_dir "%s"#
+Wind Direction: #wind_dir "%s, " "" "winddir_text(x)"#
+#wind_ave "%.0f"#
+#wind_gust "%.0f"#
+#hum_out "%d%%"#
+#hum_in "%d%%"#
+#rain "%.0f"#
+#rel_pressure "%.0f"#

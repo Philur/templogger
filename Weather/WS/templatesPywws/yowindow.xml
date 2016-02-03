@@ -1,15 +1,34 @@
-#! #
-#live#
-#timezone local#
-#roundtime True#
-#idx "%H:%M %Z:"#
-Temperature Out: #temp_out "%.1f C"#
-Temperature In: #temp_in "%.1f C"#
-Wind Direction: #wind_dir "%s, " "" "winddir_text(x)"#
-Wind Average: #wind_ave "%.0f mph (ave), " "" "wind_mph(x)"#
-Wind Gust #wind_gust "%.0f mph (gust)" "" "wind_mph(x)"#
-Humidity Out: #hum_out "%d%%"#
-Humidity In: #hum_in "%d%%"#
-Rain (hourly) #rain "%.1f mm"#
-Pressure: #rel_pressure "%.0f hPa, "#
-#!pressure_trend "%s" "" "pressure_trend_text(x)"#
+<response>
+  <current_weather>
+    <temperature unit="c">
+#temp_out "      <current value=\"%.1f\"/>"#
+
+#calc "apparent_temp(data['temp_out'], data['hum_out'], data['wind_ave'])" "      <feels_like value=\"%.1f\"/>"#
+
+    </temperature>
+#hum_out "    <humidity value=\"%d\"/>"#
+
+    <pressure #rel_pressure "value=\"%.0f\""# #calc "hour_diff(data,'rel_pressure')" "trend=\"%.1f\""# unit="hPa"/>
+    <wind>
+#wind_ave "      <speed value=\"%.1f\" unit=\"m/s\"/>"#
+
+#wind_dir "      <direction value=\"%.0f\"/>" "" "winddir_degrees(x)"#
+
+#wind_gust "      <gusts value=\"%.1f\" unit=\"m/s\"/>"#
+
+    </wind>
+    <sky>
+      <precipitation>
+        <rain>
+#calc "rain_hour(data)" "          <rate value=\"%.1f\" unit=\"mm\"/>"#
+
+#calc "rain_day(data)" "          <daily_total value=\"%.1f\" unit=\"mm\"/>"#
+
+        </rain>
+      </precipitation>
+    </sky>
+    <auto_update>
+      <interval value="48"/>
+    </auto_update>
+  </current_weather>
+</response>
