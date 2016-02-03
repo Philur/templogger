@@ -1,0 +1,34 @@
+<response>
+  <current_weather>
+    <temperature unit="c">
+      <current value="-2.9"/>
+
+      <feels_like value="-5.7"/>
+
+    </temperature>
+    <humidity value="77"/>
+
+    <pressure value="1003" trend="0.3" unit="hPa"/>
+    <wind>
+      <speed value="0.1" unit="m/s"/>
+
+      <direction value="180"/>
+
+      <gusts value="0.7" unit="m/s"/>
+
+    </wind>
+    <sky>
+      <precipitation>
+        <rain>
+          <rate value="0.0" unit="mm"/>
+
+          <daily_total value="0.0" unit="mm"/>
+
+        </rain>
+      </precipitation>
+    </sky>
+    <auto_update>
+      <interval value="48"/>
+    </auto_update>
+  </current_weather>
+</response>

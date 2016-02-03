@@ -1,12 +1,20 @@
 Temp Logger
--7.0
-22.9
-Temperature Out: -7.0 C
-Temperature In: 22.9 C
+-2.9
+23.9
+-5.7
+77
+30
+1003
+0.1
+0.7
+180
+0.0
+Temperature Out: -2.9 C
+Temperature In: 23.9 C
 Wind Direction: S, 
 Wind Average: 0 mph (ave), 
-Wind Gust 0 mph (gust)
-Humidity Out: 59%
-Humidity In: 17%
+Wind Gust 2 mph (gust)
+Humidity Out: 77%
+Humidity In: 30%
 Rain (hourly) 0.0 mm
-Pressure: 1012 hPa, 
+Pressure: 1003 hPa, 
